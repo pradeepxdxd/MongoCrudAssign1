@@ -1,0 +1,25 @@
+{{> productHeader}}
+<div class="container text-center">
+    <h1 class="mt-2"><small>Products</small></h1>
+    {{#each products}}
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card" style="width: 30rem;">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=436&q=80"
+                    class="card-img-top" alt="error">
+                <div class="card-body">
+                    <h5 class="card-title">Name : {{pname}}</h5>
+                    <h5 class="card-title">Price : {{price}}</h5>
+                    <h5 class="card-title">Quantity : {{quantity}}</h5>
+                    <form action="/product/update/{{_id}}" method="post">
+                        <button type="submit" class="btn btn-info">Edit</button>
+                    </form>
+                    <form class="mt-1" action="/product/delete/{{_id}}" method="post">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
